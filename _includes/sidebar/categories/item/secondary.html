@@ -1,0 +1,12 @@
+{% assign taxonomy = include.taxonomy %}
+{% assign label = include.label %}
+{% assign url = include.url %}
+
+{% unless label %}{% assign label = taxonomy %}{% endunless %}
+{% assign size = site.categories[taxonomy].size %}
+
+<li style="margin-top: 4px;">
+    <a href="{{ url }}">
+        {{ label }} {% include sidebar/categories/common/post-counter.html value=size %}
+    </a>
+</li>
