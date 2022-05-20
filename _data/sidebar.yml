@@ -24,3 +24,12 @@ author:
         - label: "Instagram"
           icon: "fab fa-fw fa-instagram"
           # url: "https://instagram.com/"
+
+categories:
+    - title: Primary Category
+      url: /primary_category_path/
+      taxonomy: "primary category name"
+      children:
+          - title: Secondary Category
+            url: /secondary_category_path/
+            taxonomy: "secondary category name"
