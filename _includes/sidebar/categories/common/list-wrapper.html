@@ -1,0 +1,15 @@
+<nav class="nav__list">
+    <h3 class="nav__title" style="padding-left: 0;">
+        <!-- {{ site.data.ui-text[site.locale].categories_label | default: "Categories" }} -->
+        Categories
+        <label for="ac-categories">펼치기/접기</label>
+    </h3>
+    <input id="ac-categories" name="accordion-categories" type="checkbox" />
+    <ul class="nav__items">
+        <li>
+            <ul style="padding: 0 8px;">
+                {{ include.content }}
+            </ul>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,7 @@
+{% assign layout = include.layout | default: 'list' %}
+
+{% if layout == 'list' %}
+    {% include sidebar/categories/view/list.html %}
+{% elsif layout == 'tree' %}
+    {% include sidebar/categories/view/tree.html %}
+{% endif %}
