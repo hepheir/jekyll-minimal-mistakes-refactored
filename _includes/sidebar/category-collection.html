@@ -1,0 +1,12 @@
+{% capture archives %}
+    {% if site.data.category-collection %}
+        {% for parent in site.data.category-collection %}
+            {% assign taxonomy = parent[0] %}
+            {% include sidebar/category-collection/item-primary.html taxonomy=taxonomy %}
+        {% endfor %}
+    {% else %}
+        <li>No Category</li>
+    {% endif %}
+{% endcapture %}
+
+{% include sidebar/common/list-wrapper.html title="Category Collection" content=archives %}

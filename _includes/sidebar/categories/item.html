@@ -1,0 +1,11 @@
+{% assign taxonomy = include.taxonomy %}
+
+{% capture size %}{% include utils/category-size.html taxonomy=taxonomy %}{% endcapture %}
+{% capture url %}{% include utils/category-url.html taxonomy=taxonomy %}{% endcapture %}
+
+<li style="margin-top: 4px;">
+    <a href="{{ url }}">
+        {{ taxonomy }}
+        <span class="category-post-count" style="opacity: 0.33;">({{ size }})</span>
+    </a>
+</li>

@@ -1,6 +1,16 @@
 <div class="sidebar sticky">
-  {% include sidebar/author-profile.html %}
-  {% include sidebar/categories.html layout='tree' %}
+  {% if site.data.layout.sidebar.author-profile %}
+    {% include sidebar/author-profile.html %}
+  {% endif %}
+
+  {% if site.data.layout.sidebar.categories %}
+    {% include sidebar/categories.html %}
+  {% endif %}
+
+  {% if site.data.layout.sidebar.category-collection %}
+    {% include sidebar/category-collection.html %}
+  {% endif %}
+
   {% if page.sidebar %}
     {% for s in page.sidebar %}
       {% if s.image %}

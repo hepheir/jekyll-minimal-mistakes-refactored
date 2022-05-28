@@ -1,0 +1,21 @@
+{% assign taxonomy = include.taxonomy %}
+
+{% capture size %}{% include utils/category-size.html taxonomy=taxonomy %}{% endcapture %}
+{% capture url %}{% include utils/category-url.html taxonomy=taxonomy %}{% endcapture %}
+
+<li style="margin: 4px 0;">
+    <a href="{{ url }}" style="font-weight: bold;">
+        {{ taxonomy }}
+        <span class="category-post-count" style="opacity: 0.33;">({{ size }})</span>
+    </a>
+</li>
+
+{% if site.data.category-collection[taxonomy] %}
+<li style="margin-bottom: 12px; font-size: inherit;">
+    <ul style="padding-left: 16px;">
+        {% for child_taxonomy in site.data.category-collection[taxonomy] %}
+            {% include sidebar/category-collection/item-secondary.html taxonomy=child_taxonomy %}
+        {% endfor %}
+    </ul>
+</li>
+{% endif %}

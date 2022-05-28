@@ -1,7 +1,10 @@
-{% assign layout = include.layout | default: 'list' %}
+<!-- {% assign categories_sorted = site.categories | sort_natural %} -->
 
-{% if layout == 'list' %}
-    {% include sidebar/categories/view/list.html %}
-{% elsif layout == 'tree' %}
-    {% include sidebar/categories/view/tree.html %}
-{% endif %}
+{% capture archives %}
+    {% for category in site.categories %}
+        {% assign taxonomy = category[0] %}
+        {% include sidebar/categories/item.html taxonomy=taxonomy %}
+    {% endfor %}
+{% endcapture %}
+
+{% include sidebar/common/list-wrapper.html title="Categories" content=archives %}
